@@ -3,6 +3,12 @@ PROJECT(MinimalApplication)
 
 ADD_DEFINITIONS("-std=c++11")
 
+
+if(WIN32)
+	set(wxWidgets_ROOT_DIR "C:/Users/Richard/Documents/GitHub/wxWidgets" CACHE PATH "wxWidgets base directory" FORCE)
+	set(wxWidgets_wxrc_EXECUTABLE "${wxWidgets_ROOT_DIR}/utils/wxrc/wxrc.rc")
+endif(WIN32)
+
 FIND_PACKAGE( wxWidgets COMPONENTS core base REQUIRED )
 
 # wxWidgets include (this will do all the magic to configure everything)
@@ -14,15 +20,20 @@ set(SRCS main.cpp MyApp.cpp MyFrame.cpp)
 
 # If we build for windows systems, we also include the resource file
 # containing the manifest, icon and other resources
-if(WIN32)
-  set(SRCS ${SRCS} minimal.rc)
-endif(WIN32)
+#if(WIN32)
+  #set(SRCS ${SRCS} minimal.rc)
+#endif(WIN32)
 
 # Here we define the executable minimal.exe or minimal on other systems
 # the above paths and defines will be used in this build
 add_executable(MinimalApplication WIN32 ${SRCS})
 
+cmake_policy(VERSION 3.4)
+
+
 # We add to our target 'MinimalApplication' the wxWidgets libraries. These are
 # set for us by the find script. If you need other libraries, you
 # can add them here as well.
 target_link_libraries(MinimalApplication ${wxWidgets_LIBRARIES})
+
+
