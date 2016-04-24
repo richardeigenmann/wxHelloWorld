@@ -19,7 +19,9 @@ include( "${wxWidgets_USE_FILE}" )
 
 # For convenience we define the sources as a variable. You can add
 # header files and cpp/c files and CMake will sort them out
-set(SRCS main.cpp MyApp.cpp MyFrame.cpp)
+set(SRCS 
+    MyApp.cpp 
+    MyFrame.cpp)
 
 # Here we define the executable minimal.exe or minimal on other systems
 # the above paths and defines will be used in this build
