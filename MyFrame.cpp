@@ -19,10 +19,10 @@ MyFrame::MyFrame(const wxString& title)
     SetIcon(wxIcon(mondrian_xpm));
 
     // Create a menu bar
-    wxMenu *fileMenu = new wxMenu;
+    wxMenu* fileMenu = new wxMenu;
 
     // The "About" item should be in the help menu
-    wxMenu *helpMenu = new wxMenu;
+    wxMenu* helpMenu = new wxMenu;
 
     helpMenu->Append(wxID_ABOUT, wxT("&About...\tF1"),
             wxT("Show about dialog"));
@@ -31,7 +31,7 @@ MyFrame::MyFrame(const wxString& title)
             wxT("Quit this program"));
 
     // Now append the freshly created menu to the menu bar...
-    wxMenuBar *menuBar = new wxMenuBar();
+    wxMenuBar* menuBar = new wxMenuBar();
     menuBar->Append(fileMenu, wxT("&File"));
     menuBar->Append(helpMenu, wxT("&Help"));
     // ... and attach this menu bar to the frame
@@ -48,9 +48,13 @@ MyFrame::MyFrame(const wxString& title)
     wxButton* red_button = new wxButton(this, BUTTON_Red, wxT("Go Red"), wxPoint(200, 160));
     
     panel = new wxPanel(this, wxID_ANY);
-    panel->SetSize(160,20);
+    panel->SetSize(200,20);
+    
     panel->SetPosition(wxPoint(10,10));
-    staticBox_label = new wxStaticBox(panel, STATIC_BOX_Label, wxT("Not connecteed"), wxPoint( 0,0), wxSize(60,20));
+    staticBox_label = new wxStaticBox(panel, STATIC_BOX_Label, wxT("Not connecteed"), wxPoint( 0,0));
+    //staticBox_label->GetBestSize();
+    //staticBox_label->SetSize(200,20);
+    //panel->GetBestSize();
     //panel->AddChild(new wxStaticText(this, wxT("gaga"), wxPoint (0,0)));
 }
 

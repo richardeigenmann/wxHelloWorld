@@ -10,8 +10,9 @@ IMPLEMENT_APP(MyApp)
 bool MyApp::OnInit()
 {
     // Create the main application window
-    MyFrame *frame = new MyFrame(wxT("Minimal wxWidgets App from Richard"));
-
+    MyFrame* frame = new MyFrame(wxT("Minimal wxWidgets App from Richard"));
+    frame->CenterOnParent(wxBOTH);
+    
     // Show it
     frame->Show(true);
 
