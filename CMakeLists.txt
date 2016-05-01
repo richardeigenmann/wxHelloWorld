@@ -1,7 +1,5 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.4)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 PROJECT(MinimalApplication)
-
-cmake_policy(VERSION 3.4)
 
 if(WIN32)
 	set(wxWidgets_ROOT_DIR "C:/Users/Richard/Documents/GitHub/wxWidgets" CACHE PATH "wxWidgets base directory" FORCE)
@@ -19,8 +17,8 @@ include( "${wxWidgets_USE_FILE}" )
 
 # For convenience we define the sources as a variable. You can add
 # header files and cpp/c files and CMake will sort them out
-set(SRCS 
-    MyApp.cpp 
+set(SRCS
+    MyApp.cpp
     MyFrame.cpp)
 
 # Here we define the executable minimal.exe or minimal on other systems
